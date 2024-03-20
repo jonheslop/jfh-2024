@@ -9,7 +9,7 @@ export default async function Home() {
   return (
     <>
       <header>
-        <h1 className="text-8xl font-bold uppercase fixed z-10 mix-blend-overlay text-neutral-900">
+        <h1 className="text-8xl fixed z-10 mix-blend-overlay text-neutral-200">
           Jon Heslop
         </h1>
       </header>

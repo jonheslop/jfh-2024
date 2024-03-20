@@ -33,7 +33,7 @@ export const RecentTrack = async () => {
   const { track, nowPlaying, total } = await fetchListeningData();
 
   return (
-    <div className="flex gap-4 bg-neutral-100/80 p-4 text-neutral-900 w-full max-w-sm">
+    <div className="flex gap-3 bg-lime-900 p-3 text-neutral-200 w-full max-w-sm">
       <Image
         src={track.image[3]['#text']}
         width={128}
@@ -45,8 +45,10 @@ export const RecentTrack = async () => {
         <h4 className="uppercase text-xs tracking-widest mb-2">
           {nowPlaying ? 'Now playing' : 'Recently listened'}
         </h4>
-        <strong className="text-balance">{track.name}</strong>
-        <span className="text-balance">by {track.artist}</span>
+        <strong className="font-normal text-xl text-balance">
+          {track.name}
+        </strong>
+        <span className="text-balance text-xs">by {track.artist}</span>
         <span className="text-xs mt-auto">
           {new Intl.NumberFormat('en-GB').format(total)}{' '}
           <Link

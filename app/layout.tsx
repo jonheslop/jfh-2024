@@ -1,5 +1,23 @@
 import type { Metadata } from 'next';
+import localFont from 'next/font/local';
 import './globals.css';
+
+const soehne = localFont({
+  src: [
+    {
+      path: '../fonts/soehne-web-buch.woff2',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: '../fonts/soehne-web-buch-kursiv.woff2',
+      weight: '400',
+      style: 'italic',
+    },
+  ],
+  display: 'swap',
+  variable: '--font-soehne',
+});
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -13,7 +31,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="bg-lime-800 p-3 md:p-6">{children}</body>
+      <body className={`${soehne.variable} font-soehne bg-lime-800 p-3 md:p-6`}>
+        {children}
+      </body>
     </html>
   );
 }
